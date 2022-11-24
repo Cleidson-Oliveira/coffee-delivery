@@ -1,5 +1,6 @@
 import { Header } from "../../components/header";
 import { Intro } from "./components/intro";
+import { Products } from "./components/products";
 
 export function Home () {
 
@@ -7,6 +8,7 @@ export function Home () {
 		<>
 			<Header />
 			<Intro />
+			<Products />
 		</>
 	);
 }

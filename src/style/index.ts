@@ -14,4 +14,11 @@ export const GlobalStyle = createGlobalStyle`
     body, html, input, button {
         font-family: "Roboto";
     }
+    h1, h2, p, span, a {
+        line-height: 130%;
+    }
+    button {
+        border: none;
+        cursor: pointer;
+    }
 `;

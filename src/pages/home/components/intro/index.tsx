@@ -2,7 +2,7 @@ import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
 import { useTheme } from "styled-components";
 
 import Image from "../../../../assets/coffee-delivery-hero-image.png";
-import { Card, Conteiner } from "./style";
+import { Card, Conteiner, TextContent } from "./style";
 
 export function Intro () {
 
@@ -10,7 +10,7 @@ export function Intro () {
 
 	return (
 		<Conteiner>
-			<div>
+			<TextContent>
 				<div>
 					<h1>Encontre o café perfeito para qualquer hora do dia</h1>
 					<p>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</p>
@@ -33,7 +33,7 @@ export function Intro () {
 						<p>O café chega fresquinho até você</p>
 					</Card>
 				</div>
-			</div>
+			</TextContent>
 			<img src={Image} />
 		</Conteiner>
 	);

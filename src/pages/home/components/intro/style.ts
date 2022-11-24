@@ -7,41 +7,48 @@ interface CardProps {
 export const Conteiner = styled.div`
     display: flex;
     align-items: center;
-    gap: 3.5rem;
-    padding: 94px;
+    justify-content: center;
+    padding: 94px 0;
     margin: auto;
-
-    & > div {
-        
-        & > div:first-child {
-            display: flex;
-            flex-direction: column;
-            gap: .5rem;
-            margin-bottom: 3.125rem;
-        }
-
-        & div:last-child {
-            display: flex;
-            flex-wrap: wrap;
-            row-gap: 1rem;
-        }
-    }
-
-    h1 {
-        font-weight: bold;
-        font-size: 3rem;
-    }
 
     img {
         width: fit-content;
     }
 `;
 
+export const TextContent = styled.div`
+    
+        width: 44%;
+
+        h1 {
+            font-family: ${({theme})=> theme.fontFamily.header};
+            font-weight: bold;
+            font-size: ${({theme}) => theme.fontSize.title.xl}px;
+        }
+        
+        & > div:first-child {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            margin-bottom: 3.125rem;
+
+            p {
+                font-size: ${({theme}) => theme.fontSize.text.xl}px;
+            }
+        }
+
+        & > div:last-child {
+            display: grid;
+            grid-template-columns: 40% 1fr;
+            gap: 1rem;
+        }
+    
+`;
+
 export const Card = styled.div<CardProps>`
     display: flex;
     align-items: center;
     gap: .8rem;
-    width: 48%;
 
     & > div {
         display: flex;

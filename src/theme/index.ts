@@ -24,7 +24,24 @@ export const theme = {
 		},
 	},
 	fontFamily: {
-		header: "baloo 2",
-		text: "Roboto"
+		header: "'Baloo 2'",
+		text: "'Roboto'"
+	},
+	fontSize: {
+		text: {
+			"xs": "10",
+			"sm": "12",
+			"md": "14",
+			"base": "16",
+			"lg": "18",
+			"xl": "20",
+			"2xl": "24"
+		},
+		title: {
+			"sm": "18",
+			"md": "20",
+			"lg": "32",
+			"xl": "48"
+		}
 	}
 };
