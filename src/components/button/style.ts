@@ -1,19 +1,20 @@
 import styled, { css } from "styled-components";
 
 export const Conteiner = styled.button`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 38px;
-    height: 38px;
+    width: 100%;
+    padding: 12px;
     border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
     transition: all .3s ease;
 
     ${({theme}) => css`
-        background-color: ${theme.colors.purple.dark};
+        background-color: ${theme.colors.yellow.mid};
+        font-size: ${theme.fontSize.text.sm};
+        color: white;
         
         :hover {
-            background-color: ${theme.colors.purple.mid};
+            background-color: ${theme.colors.yellow.dark};
         }
     `}
 

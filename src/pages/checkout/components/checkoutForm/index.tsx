@@ -1,10 +1,12 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { AddressFormConteiner, Conteiner, PaymentFormConteiner, Title } from "./style";
+import { AddressFormConteiner, Conteiner, PaymentFormConteiner, SelectedProducts, Title } from "./style";
 import { Header } from "../header";
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
 import { useTheme } from "styled-components";
+import { Button } from "../../../../components/button";
+import { CardCoffee } from "../cardCoffee";
 
 const validationScheema = z.object({
 	cep: z.string().min(1),
@@ -14,7 +16,7 @@ const validationScheema = z.object({
 	district: z.string().min(1), 
 	city: z.string().min(1),
 	uf: z.string().min(2),
-	teste: z.string()
+	paymentForm: z.string(),
 });
 
 type FormType = z.infer<typeof validationScheema>;
@@ -59,24 +61,30 @@ export function Form () {
 					</Header>
 					<div>
 						<label>
-							<input {...register("teste")} type="radio" value="creditcard"  />
+							<input {...register("paymentForm")} type="radio" value="creditcard"  />
 							<CreditCard size={22} color={colors.purple.dark} />
 							Cartão de crédito
 						</label>
 						<label>
-							<input {...register("teste")} type="radio" value="debitcard"  />
+							<input {...register("paymentForm")} type="radio" value="debitcard"  />
 							<Bank size={22} color={colors.purple.dark} />
 							Cartão de débito
 						</label>
 						<label>
-							<input {...register("teste")} type="radio" value="money"  />
+							<input {...register("paymentForm")} type="radio" value="money"  />
 							<Money size={22} color={colors.purple.dark} />
 							Dinheiro
 						</label>
 					</div>
 				</PaymentFormConteiner>
 			</div>
-			<input type="submit" value="Confirmar pedido" />
+			<div>
+				<Title>Cafés selecionados</Title>
+				<SelectedProducts>
+					<CardCoffee name="Tradicional" price={990}/>
+					<Button type="submit" title="Confirmar pedido" />
+				</SelectedProducts>
+			</div>
 		</Conteiner>
 	);
 }

@@ -11,7 +11,7 @@ export function InputNumber () {
 			<button>
 				<Minus weight="bold" color={colors.purple.dark} size={14} />
 			</button>
-			<input type="text" defaultValue={0}/>
+			<input type="text" defaultValue={0} />
 			<button>
 				<Plus weight="bold" color={colors.purple.dark} size={14} />
 			</button>

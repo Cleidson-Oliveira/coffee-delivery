@@ -1,11 +1,15 @@
-import { ShoppingCart } from "phosphor-react";
+import { ButtonHTMLAttributes } from "react";
 import { Conteiner } from "./style";
 
-export function ButtonIcon () {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+    title: string
+}
+
+export function Button ({ title, ...rest }: ButtonProps) {
 
 	return (
-		<Conteiner>
-			<ShoppingCart size={22} color="white" weight="fill" />
+		<Conteiner {...rest}>
+			{title}
 		</Conteiner>
 	);
 }

@@ -1,8 +1,15 @@
 import styled, { css } from "styled-components";
 
 export const Conteiner = styled.form`
+    display: flex;
+    gap: 2rem;
     padding: 0 160px;
     margin: 40px 0;
+    width: 100%;
+
+    & > div {
+        width: 100%;
+    }
 `;
 
 export const Title = styled.h2`
@@ -121,4 +128,11 @@ export const PaymentFormConteiner = styled.div`
             border: 2px solid ${({theme}) => theme.colors.purple.mid};
         }
     }
+`;
+
+export const SelectedProducts = styled.div`
+    padding: 40px;
+    border-radius: 6px 44px 6px 44px;
+    background-color: ${({theme}) => theme.colors.base.card};
+    width: 100%;
 `;

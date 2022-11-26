@@ -1,4 +1,5 @@
 import styled, {css} from "styled-components";
+import { Link } from "react-router-dom";
 
 interface ButtonCartProps {
     productsAmount: number
@@ -24,7 +25,7 @@ export const Actions = styled.div`
 
 `;
 
-export const ButtonCart = styled.button<ButtonCartProps>`
+export const ButtonCart = styled(Link)<ButtonCartProps>`
     position: relative;
     display: flex;
     justify-content: center;
@@ -40,19 +41,20 @@ export const ButtonCart = styled.button<ButtonCartProps>`
         &:after {
             content: "${productsAmount.toString()}";
             position: absolute;
-            top: -5px;
-            right: -5px;
+            top: -10px;
+            right: -10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 15px;
-            min-height: 15px;
+            min-width: 20px;
+            min-height: 20px;
             box-sizing: border-box;
             border-radius: 50%;
             background-color: ${theme.colors.yellow.dark};
             color: white;
             font-size: .6rem;
             font-family: 'Roboto';
+            line-height: 0;
         }
     `}
 `;
