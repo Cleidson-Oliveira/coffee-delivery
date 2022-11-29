@@ -12,7 +12,7 @@ export function Header () {
 			<Content>
 				<Logo src={logo}/>
 				<Actions>
-					<ButtonCart productsAmount={3} to={"/checkout"}>
+					<ButtonCart productsamount={3} to={"/checkout"}>
 						<ShoppingCart size={20} weight="fill" color={colors.yellow.dark}/>
 					</ButtonCart>
 				</Actions>

@@ -10,7 +10,7 @@ export const Conteiner = styled.button`
 
     ${({theme}) => css`
         background-color: ${theme.colors.yellow.mid};
-        font-size: ${theme.fontSize.text.sm};
+        font-size: ${theme.fontSize.text.sm}px;
         color: white;
         
         :hover {

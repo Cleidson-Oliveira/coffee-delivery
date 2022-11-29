@@ -2,7 +2,7 @@ import styled, {css} from "styled-components";
 import { Link } from "react-router-dom";
 
 interface ButtonCartProps {
-    productsAmount: number
+    productsamount: number
 }
 
 export const Conteiner = styled.header`
@@ -21,9 +21,7 @@ export const Content = styled.div`
 
 export const Logo = styled.img``;
 
-export const Actions = styled.div`
-
-`;
+export const Actions = styled.div``;
 
 export const ButtonCart = styled(Link)<ButtonCartProps>`
     position: relative;
@@ -37,9 +35,9 @@ export const ButtonCart = styled(Link)<ButtonCartProps>`
     background-color: ${({theme}) => theme.colors.yellow.light};
     cursor: pointer;
 
-    ${({theme, productsAmount}) => productsAmount > 0 && css`
+    ${({theme, productsamount}) => productsamount > 0 && css`
         &:after {
-            content: "${productsAmount.toString()}";
+            content: "${productsamount.toString()}";
             position: absolute;
             top: -10px;
             right: -10px;

@@ -1,4 +1,4 @@
-import { Header } from "../../components/header";
+import { Header } from "@/components/header";
 import { Form } from "./components/checkoutForm";
 import { Conteiner } from "./style";
 

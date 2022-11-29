@@ -1,11 +1,11 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { AddressFormConteiner, Conteiner, PaymentFormConteiner, SelectedProducts, Title } from "./style";
+import { AddressFormConteiner, Conteiner, PaymentFormConteiner, PurshaseResume, SelectedProducts, Title } from "./style";
 import { Header } from "../header";
 import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
 import { useTheme } from "styled-components";
-import { Button } from "../../../../components/button";
+import { Button } from "@/components/button";
 import { CardCoffee } from "../cardCoffee";
 
 const validationScheema = z.object({
@@ -82,6 +82,23 @@ export function Form () {
 				<Title>Cafés selecionados</Title>
 				<SelectedProducts>
 					<CardCoffee name="Tradicional" price={990}/>
+					<CardCoffee name="Tradicional" price={990}/>
+					<CardCoffee name="Tradicional" price={990}/>
+					<PurshaseResume>
+						<div>
+							<span>Total de itens</span>
+							<span>R$ 29,90</span>
+						</div>
+						<div>
+							<span>Entrega</span>
+							<span>R$ 5,00</span>
+						</div>
+						<div>
+							<span>Total</span>
+							<span>R$ 34,90</span>
+						</div>
+
+					</PurshaseResume>
 					<Button type="submit" title="Confirmar pedido" />
 				</SelectedProducts>
 			</div>

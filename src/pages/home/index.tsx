@@ -1,4 +1,4 @@
-import { Header } from "../../components/header";
+import { Header } from "@/components/header";
 import { Intro } from "./components/intro";
 import { Products } from "./components/products";
 

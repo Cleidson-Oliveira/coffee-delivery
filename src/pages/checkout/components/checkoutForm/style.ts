@@ -3,9 +3,8 @@ import styled, { css } from "styled-components";
 export const Conteiner = styled.form`
     display: flex;
     gap: 2rem;
-    padding: 0 160px;
-    margin: 40px 0;
-    width: 100%;
+    margin: 40px auto;
+    width: 80%;
 
     & > div {
         width: 100%;
@@ -113,6 +112,7 @@ export const PaymentFormConteiner = styled.div`
         border-radius: 6px;
         text-transform: uppercase;
         white-space: nowrap;
+        cursor: pointer;
 
         ${({theme}) => css`
             background-color: ${theme.colors.base.button};
@@ -135,4 +135,23 @@ export const SelectedProducts = styled.div`
     border-radius: 6px 44px 6px 44px;
     background-color: ${({theme}) => theme.colors.base.card};
     width: 100%;
+`;
+
+export const PurshaseResume = styled.div`
+    padding: 1.5rem 0;
+    font-size: 14px;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+
+        &:nth-child(2) {
+            margin: .75rem 0;
+        }
+
+        &:last-child {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
 `;

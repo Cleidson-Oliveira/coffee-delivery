@@ -1,8 +1,8 @@
 import { CardFooter, CoffeeDesc, CoffeeImage, CoffeeName, Conteiner, Tag } from "./style";
 
-import expresso from "../../../../assets/expresso.svg";
-import { InputNumber } from "../../../../components/inputNumber";
-import { ButtonIcon } from "../../../../components/buttonWithIcon";
+import expresso from "@/assets/expresso.svg";
+import { InputNumber } from "@/components/inputNumber";
+import { ButtonIcon } from "@/components/buttonWithIcon";
 
 export function CoffeeCard () {
 
