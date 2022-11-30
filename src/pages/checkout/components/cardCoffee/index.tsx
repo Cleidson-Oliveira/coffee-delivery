@@ -4,14 +4,11 @@ import coffee from "@/assets/expresso.svg";
 import { InputNumber } from "@/components/inputNumber";
 import { Trash } from "phosphor-react";
 import { useTheme } from "styled-components";
+import { IProduct } from "@/contexts/cart";
 
-interface CardCoffeeProps {
-    name: string,
-    image?: string,
-    price: number,
-}
+type CardCoffeeProps = IProduct
 
-export function CardCoffee ({ name, price }: CardCoffeeProps) {
+export function CardCoffee (props: CardCoffeeProps) {
 
 	const { colors } = useTheme();
 
@@ -21,7 +18,7 @@ export function CardCoffee ({ name, price }: CardCoffeeProps) {
 				<img src={coffee}/>
 			</div>
 			<Content>
-				<span> {name} </span>
+				<span> {props.productName} </span>
 				<InputNumber />
 				<button>
 					<Trash size={16} color={colors.purple.mid}/>
@@ -29,7 +26,7 @@ export function CardCoffee ({ name, price }: CardCoffeeProps) {
 				</button>
 			</Content>
 			<Price>
-				R$ {(price / 100).toFixed(2)}
+				R$ {(props.productPrice / 100).toFixed(2).replace(".", ",")}
 			</Price>
 		</Conteiner>
 	);

@@ -3,19 +3,34 @@ import { CardFooter, CoffeeDesc, CoffeeImage, CoffeeName, Conteiner, Tag } from 
 import expresso from "@/assets/expresso.svg";
 import { InputNumber } from "@/components/inputNumber";
 import { ButtonIcon } from "@/components/buttonWithIcon";
+import { CartContext, IProduct } from "@/contexts/cart";
+import { useContext } from "react";
 
-export function CoffeeCard () {
+type CoffeeCardProps = Omit<IProduct, "productAmount">;
+
+export function CoffeeCard (props: CoffeeCardProps) {
+
+	const { addProductInCart } = useContext(CartContext);
+
+	const handleAddProductInCart = () => {
+		addProductInCart({
+			...props,
+			productAmount: 1
+		});
+	};
 
 	return (
 		<Conteiner>
 			<CoffeeImage src={expresso}/>
-			<Tag>Tradicional</Tag>
-			<CoffeeName>Expresso Tradicional</CoffeeName>
-			<CoffeeDesc>O tradicional café feito com água quente e grãos moídos</CoffeeDesc>
+			{props.productTags.map(tag => (
+				<Tag key={tag}>{tag}</Tag>
+			))}
+			<CoffeeName>{props.productName}</CoffeeName>
+			<CoffeeDesc>{props.productDescription}</CoffeeDesc>
 			<CardFooter>
-				<p>R$ <span>9.90</span></p>
+				<p>R$ <span>{(props.productPrice / 100).toFixed(2).replace(".", ",")}</span></p>
 				<InputNumber />
-				<ButtonIcon />
+				<ButtonIcon onClick={handleAddProductInCart}/>
 			</CardFooter>
 		</Conteiner>
 	);

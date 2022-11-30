@@ -7,6 +7,8 @@ import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-re
 import { useTheme } from "styled-components";
 import { Button } from "@/components/button";
 import { CardCoffee } from "../cardCoffee";
+import { CartContext } from "@/contexts/cart";
+import { useContext } from "react";
 
 const validationScheema = z.object({
 	cep: z.string().min(1),
@@ -24,13 +26,14 @@ type FormType = z.infer<typeof validationScheema>;
 export function Form () {
 
 	const { colors } = useTheme();
+	const { cart, totalPrice } = useContext(CartContext);
 
 	const { register, handleSubmit } = useForm<FormType>({
 		resolver: zodResolver(validationScheema)
 	});
 
 	const submitCoffeeData = (data: FormType) => {
-		console.log(data);
+		console.log({addressData: data, products: cart});
 	};
 
 	return (
@@ -81,13 +84,18 @@ export function Form () {
 			<div>
 				<Title>Cafés selecionados</Title>
 				<SelectedProducts>
-					<CardCoffee name="Tradicional" price={990}/>
-					<CardCoffee name="Tradicional" price={990}/>
-					<CardCoffee name="Tradicional" price={990}/>
+					{
+						cart.map(product => (
+							<CardCoffee 
+								key={product.productId}
+								{...product}
+							/>
+						))
+					}
 					<PurshaseResume>
 						<div>
 							<span>Total de itens</span>
-							<span>R$ 29,90</span>
+							<span>R$ {(totalPrice / 100).toFixed(2).replace(".", ",")}</span>
 						</div>
 						<div>
 							<span>Entrega</span>
@@ -95,7 +103,7 @@ export function Form () {
 						</div>
 						<div>
 							<span>Total</span>
-							<span>R$ 34,90</span>
+							<span>R$ {((totalPrice + 500) / 100).toFixed(2).replace(".", ",")}</span>
 						</div>
 
 					</PurshaseResume>

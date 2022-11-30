@@ -1,0 +1,74 @@
+[
+    {
+        "productDescription": "O tradicional café feito com água quente e grãos moídos",
+        "productName": "Expresso Tradicional",
+        "productId": "1",
+        "productImage": "",
+        "productPrice": 990,
+        "productTags": ["tradicional"]
+    },
+    {
+        "productDescription": "O tradicional café feito com água quente e grãos moídos",
+        "productName": "Expresso Tradicional",
+        "productId": "2",
+        "productImage": "",
+        "productPrice": 990,
+        "productTags": ["tradicional"]
+    },
+    {
+        "productDescription": "O tradicional café feito com água quente e grãos moídos",
+        "productName": "Expresso Tradicional",
+        "productId": "3",
+        "productImage": "",
+        "productPrice": 990,
+        "productTags": ["tradicional"]
+    },
+    {
+        "productDescription": "O tradicional café feito com água quente e grãos moídos",
+        "productName": "Expresso Tradicional",
+        "productId": "4",
+        "productImage": "",
+        "productPrice": 990,
+        "productTags": ["tradicional"]
+    },
+    {
+        "productDescription": "O tradicional café feito com água quente e grãos moídos",
+        "productName": "Expresso Tradicional",
+        "productId": "5",
+        "productImage": "",
+        "productPrice": 990,
+        "productTags": ["tradicional"]
+    },
+    {
+        "productDescription": "O tradicional café feito com água quente e grãos moídos",
+        "productName": "Expresso Tradicional",
+        "productId": "6",
+        "productImage": "",
+        "productPrice": 990,
+        "productTags": ["tradicional"]
+    },
+    {
+        "productDescription": "O tradicional café feito com água quente e grãos moídos",
+        "productName": "Expresso Tradicional",
+        "productId": "7",
+        "productImage": "",
+        "productPrice": 990,
+        "productTags": ["tradicional"]
+    },
+    {
+        "productDescription": "O tradicional café feito com água quente e grãos moídos",
+        "productName": "Expresso Tradicional",
+        "productId": "8",
+        "productImage": "",
+        "productPrice": 990,
+        "productTags": ["tradicional"]
+    },
+    {
+        "productDescription": "O tradicional café feito com água quente e grãos moídos",
+        "productName": "Expresso Tradicional",
+        "productId": "9",
+        "productImage": "",
+        "productPrice": 990,
+        "productTags": ["tradicional"]
+    }
+]
