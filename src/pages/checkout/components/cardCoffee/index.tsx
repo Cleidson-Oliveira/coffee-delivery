@@ -1,26 +1,37 @@
+import { useContext } from "react";
+import { useTheme } from "styled-components";
+import { toast } from "react-toastify";
+import { Trash } from "phosphor-react";
+import { InputNumber } from "@/components/inputNumber";
+import { CartContext, IProduct } from "@/contexts/cart";
 import { Conteiner, Content, Price } from "./style";
 
-import coffee from "@/assets/expresso.svg";
-import { InputNumber } from "@/components/inputNumber";
-import { Trash } from "phosphor-react";
-import { useTheme } from "styled-components";
-import { IProduct } from "@/contexts/cart";
-
-type CardCoffeeProps = IProduct
+type CardCoffeeProps = IProduct;
 
 export function CardCoffee (props: CardCoffeeProps) {
 
 	const { colors } = useTheme();
 
+	const { handleProductAmount, removeProductFromCart } = useContext(CartContext);
+
+	const changeProductsAmount = (value: number) => {
+		handleProductAmount(props.productId, value);
+	};
+
+	const removeFromCart = () => {
+		removeProductFromCart(props.productId);
+		toast.success("Item removido do carrinho!");
+	};
+
 	return (
 		<Conteiner>
 			<div>
-				<img src={coffee}/>
+				<img src={props.productImage}/>
 			</div>
 			<Content>
 				<span> {props.productName} </span>
-				<InputNumber />
-				<button>
+				<InputNumber value={props.productAmount} modifier={changeProductsAmount}/>
+				<button onClick={removeFromCart}>
 					<Trash size={16} color={colors.purple.mid}/>
 					Remover
 				</button>

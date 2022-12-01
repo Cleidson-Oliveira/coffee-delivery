@@ -4,6 +4,7 @@ import { ShoppingCart } from "phosphor-react";
 import { useTheme } from "styled-components";
 import { useContext } from "react";
 import { CartContext } from "@/contexts/cart";
+import { Link } from "react-router-dom";
 
 export function Header () {
 
@@ -13,7 +14,9 @@ export function Header () {
 	return (
 		<Conteiner>
 			<Content>
-				<Logo src={logo}/>
+				<Link to={"/"}>
+					<Logo src={logo}/>
+				</Link>
 				<Actions>
 					<ButtonCart productsamount={cartProductsAmount} to={"/checkout"}>
 						<ShoppingCart size={20} weight="fill" color={colors.yellow.dark}/>

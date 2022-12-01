@@ -28,11 +28,17 @@ export const Tag = styled.span`
     height: 30px;
     padding: 5px 10px;
     border-radius: 15px;
-
+    text-transform: uppercase;
+    
     ${({theme}) => css`
         color: ${theme.colors.yellow.dark};
         background-color: ${theme.colors.yellow.light};
+        font-size: ${theme.fontSize.text.xs}px;
     `}
+
+    & + & {
+        margin-left: 5px;
+    }
 `;
 
 export const CoffeeName = styled.h2`

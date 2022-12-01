@@ -1,14 +1,17 @@
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { AddressFormConteiner, Conteiner, PaymentFormConteiner, PurshaseResume, SelectedProducts, Title } from "./style";
-import { Header } from "../header";
-import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { useTheme } from "styled-components";
+import { toast } from "react-toastify";
+import { Bank, CreditCard, CurrencyDollar, MapPinLine, Money } from "phosphor-react";
 import { Button } from "@/components/button";
-import { CardCoffee } from "../cardCoffee";
 import { CartContext } from "@/contexts/cart";
-import { useContext } from "react";
+import { Header } from "../header";
+import { CardCoffee } from "../cardCoffee";
+import { CartEmpyt } from "../cartEmpyt";
+import { AddressFormConteiner, Conteiner, PaymentFormConteiner, PurshaseResume, SelectedProducts, Title } from "./style";
 
 const validationScheema = z.object({
 	cep: z.string().min(1),
@@ -21,20 +24,32 @@ const validationScheema = z.object({
 	paymentForm: z.string(),
 });
 
-type FormType = z.infer<typeof validationScheema>;
+export type FormType = z.infer<typeof validationScheema>;
 
 export function Form () {
 
 	const { colors } = useTheme();
-	const { cart, totalPrice } = useContext(CartContext);
+	const { cart, totalPrice, clearCart } = useContext(CartContext);
+	const navigate = useNavigate();
 
-	const { register, handleSubmit } = useForm<FormType>({
+	const { register, handleSubmit, formState: {errors} } = useForm<FormType>({
 		resolver: zodResolver(validationScheema)
 	});
 
 	const submitCoffeeData = (data: FormType) => {
 		console.log({addressData: data, products: cart});
+
+		localStorage.setItem("@coffee-delivery:last-order", JSON.stringify({addressData: data, products: cart}));
+		clearCart();
+		navigate("/success");
 	};
+
+	useEffect(() => {
+		if (Object.keys(errors).length === 0) return;
+
+		toast.error("Todos os campos obrigatórios devem ser preenchidos!");
+		
+	}, [errors]);
 
 	return (
 		<Conteiner onSubmit={handleSubmit(submitCoffeeData)}>
@@ -50,7 +65,7 @@ export function Form () {
 					<input placeholder="CEP" {...register("cep")} />
 					<input placeholder="Rua" {...register("street")} />
 					<input placeholder="Número" type="number" {...register("number", {valueAsNumber:true})} />
-					<input placeholder="Complemento" {...register("complement")} />
+					<input placeholder="Complemento Opcional"  {...register("complement")} />
 					<input placeholder="Bairro" {...register("district")} />
 					<input placeholder="Cidade" {...register("city")} />
 					<input placeholder="UF" {...register("uf")} />
@@ -84,30 +99,34 @@ export function Form () {
 			<div>
 				<Title>Cafés selecionados</Title>
 				<SelectedProducts>
-					{
-						cart.map(product => (
-							<CardCoffee 
-								key={product.productId}
-								{...product}
-							/>
-						))
-					}
-					<PurshaseResume>
-						<div>
-							<span>Total de itens</span>
-							<span>R$ {(totalPrice / 100).toFixed(2).replace(".", ",")}</span>
-						</div>
-						<div>
-							<span>Entrega</span>
-							<span>R$ 5,00</span>
-						</div>
-						<div>
-							<span>Total</span>
-							<span>R$ {((totalPrice + 500) / 100).toFixed(2).replace(".", ",")}</span>
-						</div>
+					{ cart.length == 0 
+						? <CartEmpyt /> 
+						: <>
+							{ cart.map(product => (
+								<CardCoffee 
+									key={product.productId}
+									{...product}
+								/>
+							))}
+							
+							<PurshaseResume>
+								<div>
+									<span>Total de itens</span>
+									<span>R$ {(totalPrice / 100).toFixed(2).replace(".", ",")}</span>
+								</div>
+								<div>
+									<span>Entrega</span>
+									<span>R$ 5,00</span>
+								</div>
+								<div>
+									<span>Total</span>
+									<span>R$ {((totalPrice + 500) / 100).toFixed(2).replace(".", ",")}</span>
+								</div>
 
-					</PurshaseResume>
-					<Button type="submit" title="Confirmar pedido" />
+							</PurshaseResume>
+							<Button type="submit" title="Confirmar pedido" />
+						</>
+					}
 				</SelectedProducts>
 			</div>
 		</Conteiner>
