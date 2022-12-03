@@ -8,7 +8,7 @@ export const Conteiner = styled.div`
 
     h1 {
         ${({theme}) => css`
-            font-size: ${theme.fontSize.title.lg};
+            font-size: ${theme.fontSize.title.lg}px;
             font-family: ${theme.fontFamily.header};
             color: ${theme.colors.yellow.dark};
         `}
@@ -23,6 +23,19 @@ export const Conteiner = styled.div`
         justify-content: space-between;
         width: 100%;
         margin-top: 2.5rem;
+    }
+
+    @media screen and (max-width: 600px) {
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+
+        & > div {
+            flex-direction: column-reverse;
+            gap: 2rem;
+        }
+        h1 {
+            font-size: 30px;
+        }
     }
 `;
 
