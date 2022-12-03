@@ -24,11 +24,11 @@ export function InputNumber ({value, modifier}: InputNumberProps) {
 
 	return (
 		<Conteiner>
-			<button onClick={decrement}>
+			<button type="button" onClick={decrement}>
 				<Minus weight="bold" color={colors.purple.dark} size={14} />
 			</button>
 			<input type="text" value={value} onChange={(e) => modifier(+e.target.value)}/>
-			<button onClick={increment}>
+			<button type="button" onClick={increment}>
 				<Plus weight="bold" color={colors.purple.dark} size={14} />
 			</button>
 		</Conteiner>
