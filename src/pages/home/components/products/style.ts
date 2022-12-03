@@ -19,4 +19,8 @@ export const CardsContent = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 2rem 1rem;
+
+    @media screen and (max-width: 600px) {
+        justify-content: center;
+    }
 `;

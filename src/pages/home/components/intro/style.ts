@@ -1,8 +1,17 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 interface CardProps {
     color: string
 }
+
+const fadeIn = keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`;
 
 export const Conteiner = styled.div`
     display: flex;
@@ -13,36 +22,70 @@ export const Conteiner = styled.div`
 
     img {
         width: fit-content;
+        animation: 1s ${fadeIn} ease-out;
+    }
+
+    @media screen and (max-width: 600px) {
+        flex-direction: column-reverse;
+        gap: 1rem;
+        max-width: 100vw;
+        padding: 2rem 0 3rem;
+
+        img {
+            width: 80%;
+            margin: 0 auto 1rem;
+        }
     }
 `;
 
 export const TextContent = styled.div`
     
-        width: 44%;
+    width: 44%;
+
+    h1 {
+        font-family: ${({theme})=> theme.fontFamily.header};
+        font-weight: bold;
+        font-size: ${({theme}) => theme.fontSize.title.xl}px;
+    }
+    
+    & > div:first-child {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        margin-bottom: 3.125rem;
+
+        p {
+            font-size: ${({theme}) => theme.fontSize.text.xl}px;
+        }
+    }
+
+    & > div:last-child {
+        display: grid;
+        grid-template-columns: 40% 1fr;
+        gap: 1rem;
+    }
+    
+    @media screen and (max-width: 600px) {
+        width: 80%;
 
         h1 {
-            font-family: ${({theme})=> theme.fontFamily.header};
-            font-weight: bold;
-            font-size: ${({theme}) => theme.fontSize.title.xl}px;
+            font-size: 1.6rem;
         }
-        
+
         & > div:first-child {
-            display: flex;
-            flex-direction: column;
-            gap: .5rem;
-            margin-bottom: 3.125rem;
+            margin-bottom: 1.5rem;
 
             p {
-                font-size: ${({theme}) => theme.fontSize.text.xl}px;
+                font-size: 1.1rem;
             }
         }
 
         & > div:last-child {
-            display: grid;
-            grid-template-columns: 40% 1fr;
-            gap: 1rem;
+            display: flex;
+            flex-direction: column;
         }
-    
+
+    }
 `;
 
 export const Card = styled.div<CardProps>`
