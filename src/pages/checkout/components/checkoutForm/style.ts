@@ -9,6 +9,10 @@ export const Conteiner = styled.form`
     & > div {
         width: 100%;
     }
+
+    @media screen and (max-width: 600px) {
+        flex-wrap: wrap;
+    }
 `;
 
 export const Title = styled.h2`
@@ -89,6 +93,12 @@ export const AddressFormConteiner = styled.div`
             grid-column: 8/9;
         }
     }
+
+    @media screen and (max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        padding: 40px 20px;
+    }
 `;
 
 export const PaymentFormConteiner = styled.div`
@@ -128,10 +138,18 @@ export const PaymentFormConteiner = styled.div`
             border: 2px solid ${({theme}) => theme.colors.purple.mid};
         }
     }
+
+    @media screen and (max-width: 600px) {
+        padding: 40px 20px;
+
+        & > div {
+            flex-direction: column;
+        }
+    }
 `;
 
 export const SelectedProducts = styled.div`
-    padding: 40px;
+    padding: 40px 25px;
     border-radius: 6px 44px 6px 44px;
     background-color: ${({theme}) => theme.colors.base.card};
     width: 100%;

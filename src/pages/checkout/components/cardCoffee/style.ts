@@ -16,6 +16,11 @@ export const Conteiner = styled.div`
     & + & {
         padding-top: 1.5rem;
     }
+
+    @media screen and (max-width: 600px) {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 `;
 
 export const Content = styled.div`
@@ -40,8 +45,21 @@ export const Content = styled.div`
         border-radius: 6px;
         background-color: ${({theme}) => theme.colors.base.button};
     }
+
+    @media screen and (max-width: 600px) {
+        justify-content: center;
+
+        span {
+            text-align: center;
+        }
+    }
 `;
 
 export const Price = styled.div`
     font-weight: bold;
+
+    @media screen and (max-width: 600px) {
+        width: 100%;
+        text-align: end;
+    }
 `;
