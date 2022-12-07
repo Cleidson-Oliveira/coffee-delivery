@@ -13,7 +13,7 @@
 # Indice
 
 * [Sobre](#sobre)
-* [Funcionalidades](#funcionalidades)
+* [Recursos](#recursos)
 * [Tecnologias Utilizadas](#tecnologias-utilizadas)
 * [Como baixar o projeto](#como-baixar-o-projeto)
 
@@ -23,7 +23,7 @@ O projeto **Coffee delivery** é o front-end de um e-commerce que foi criado den
 
 ---
 
-## ⚙ Funcionalidades
+## Recursos ⚙
 
 - Listagem de produtos disponíveis para compra
 - Adicionar uma quantidade específicas de itens no carrinho
@@ -34,7 +34,7 @@ O projeto **Coffee delivery** é o front-end de um e-commerce que foi criado den
 
 ---
 
-## 🚀 Tecnologias utilizadas
+## Tecnologias utilizadas 🚀
 
 O projeto foi desenvolvido utilizando as seguintes tecnologias
 
@@ -42,7 +42,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 ---
 
-## 🗂 Como baixar o projeto
+## Como baixar o projeto 🗂
 
 ```bash
 
