@@ -17,7 +17,7 @@
 * [Tecnologias Utilizadas](#tecnologias-utilizadas)
 * [Como baixar o projeto](#como-baixar-o-projeto)
 
-## 🔖&nbsp; Sobre
+## Sobre 🔖
 
 O projeto **Coffee delivery** é o front-end de um e-commerce que foi criado dentro do curso **Bootcamp Ignite** da **Rocketseat** com o intuito de colocarmos em prática todo conteúdo estudado durante o curso.
 
