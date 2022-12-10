@@ -1,6 +1,5 @@
 {
   "name": "coffee-delivery",
-  "homepage": "github-page/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -20,8 +19,8 @@
     "react-toastify": "^9.1.1",
     "styled-components": "^5.3.6",
     "zod": "^3.19.1"
-  },
-  "devDependencies": {
+},
+"devDependencies": {
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/styled-components": "^5.1.26",
