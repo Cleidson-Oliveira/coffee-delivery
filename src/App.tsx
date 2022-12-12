@@ -25,7 +25,7 @@ function App() {
 				theme="light"
 			/>				
 			<CartProvider>
-				<Router>
+				<Router basename="/coffee-delivery/">
 					<AppRoutes />
 				</Router>
 			</CartProvider>

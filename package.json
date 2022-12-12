@@ -1,5 +1,6 @@
 {
   "name": "coffee-delivery",
+  "homepage": "coffee-delivery/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -22,6 +23,7 @@
     "zod": "^3.19.1"
   },
   "devDependencies": {
+    "@types/node": "^18.11.13",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/styled-components": "^5.1.26",
@@ -30,6 +32,7 @@
     "@vitejs/plugin-react": "^2.0.1",
     "eslint": "^8.28.0",
     "eslint-plugin-react": "^7.31.11",
+    "gh-pages": "^4.0.0",
     "typescript": "^4.6.4",
     "vite": "^3.0.7"
   }
