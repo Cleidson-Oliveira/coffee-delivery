@@ -2,14 +2,6 @@
     <img src="src/assets/logo.svg">
 </h1>
 
-<!-- <h1>
-    <img src="public/apresentacao.gif">
-</h1> -->
-
-<!-- <h3 align="center">
-    <a href="https://rocketmusics.herokuapp.com/">Acessar a demonstração</a>
-<h3 > -->
-
 # Indice
 
 * [Sobre](#sobre)
@@ -17,13 +9,17 @@
 * [Tecnologias Utilizadas](#tecnologias-utilizadas)
 * [Como baixar o projeto](#como-baixar-o-projeto)
 
-## Sobre 🔖
+## Sobre
 
 O projeto **Coffee delivery** é o front-end de um e-commerce que foi criado dentro do curso **Bootcamp Ignite** da **Rocketseat** com o intuito de colocarmos em prática todo conteúdo estudado durante o curso.
 
+<h3 align="center">
+    <a href="https://cleidson-oliveira.github.io/coffee-delivery">Acessar a demonstração</a>
+<h3 >
+
 ---
 
-## Recursos ⚙
+## Recursos
 
 - Listagem de produtos disponíveis para compra
 - Adicionar uma quantidade específicas de itens no carrinho
@@ -34,7 +30,7 @@ O projeto **Coffee delivery** é o front-end de um e-commerce que foi criado den
 
 ---
 
-## Tecnologias utilizadas 🚀
+## Tecnologias utilizadas
 
 O projeto foi desenvolvido utilizando as seguintes tecnologias
 
@@ -42,7 +38,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 ---
 
-## Como baixar o projeto 🗂
+## Como baixar o projeto
 
 ```bash
 
