@@ -556,7 +556,7 @@ Error generating stack: `+i.message+`
         border-radius: 50%;
         background-color: ${({color:e})=>e};
     }
-`;function ox(){const{colors:e}=ki();return T(nx,{children:[T(rx,{children:[T("div",{children:[a("h1",{children:"Encontre o caf\xE9 perfeito para qualquer hora do dia"}),a("p",{children:"Com o Coffee Delivery voc\xEA recebe seu caf\xE9 onde estiver, a qualquer hora"})]}),T("div",{children:[T(Zi,{color:e.yellow.dark,children:[a("div",{children:a(Kc,{size:16,color:"white"})}),a("p",{children:"Compra simples e segura"})]}),T(Zi,{color:e.base.text,children:[a("div",{children:a(a2,{size:16,color:"white"})}),a("p",{children:"Embalagem mant\xE9m o caf\xE9 intacto"})]}),T(Zi,{color:e.yellow.mid,children:[a("div",{children:a(U1,{size:16,color:"white"})}),a("p",{children:"Entrega r\xE1pida e rastreada"})]}),T(Zi,{color:e.purple.mid,children:[a("div",{children:a(Kv,{size:16,color:"white"})}),a("p",{children:"O caf\xE9 chega fresquinho at\xE9 voc\xEA"})]})]})]}),a("img",{src:ex})]})}const ix="https://graphql.datocms.com/",sx="020e6856df9d59a159a643b65b5204";async function lx(e){const n=await(await fetch(ix,{method:"POST",headers:{"Content-Type":"application/json",Authorization:`Bearer ${sx}`},body:JSON.stringify({query:e})})).json();if(n.errors)throw new Error("Failed to fetch API");return n.data}async function ax(){const t=(await lx(`
+`;function ox(){const{colors:e}=ki();return T(nx,{children:[T(rx,{children:[T("div",{children:[a("h1",{children:"Encontre o caf\xE9 perfeito para qualquer hora do dia"}),a("p",{children:"Com o Coffee Delivery voc\xEA recebe seu caf\xE9 onde estiver, a qualquer hora"})]}),T("div",{children:[T(Zi,{color:e.yellow.dark,children:[a("div",{children:a(Kc,{size:16,color:"white"})}),a("p",{children:"Compra simples e segura"})]}),T(Zi,{color:e.base.text,children:[a("div",{children:a(a2,{size:16,color:"white"})}),a("p",{children:"Embalagem mant\xE9m o caf\xE9 intacto"})]}),T(Zi,{color:e.yellow.mid,children:[a("div",{children:a(U1,{size:16,color:"white"})}),a("p",{children:"Entrega r\xE1pida e rastreada"})]}),T(Zi,{color:e.purple.mid,children:[a("div",{children:a(Kv,{size:16,color:"white"})}),a("p",{children:"O caf\xE9 chega fresquinho at\xE9 voc\xEA"})]})]})]}),a("img",{src:ex})]})}const ix="https://graphql.datocms.com/",sx="020e6856df9d59a159a643b65b5204";async function lx(e){const n=await(await fetch(ix,{method:"POST",headers:{"Content-Type":"application/json",Authorization:`Bearer ${sx}`},body:JSON.stringify({query:e})})).json();if(n.errors)throw new Error("Failed to fetch API");return n.data}async function ax(){return(await lx(`
         {
             allProductsInfos {
                 id
@@ -567,7 +567,7 @@ Error generating stack: `+i.message+`
                 productTags { tagName }
             }
         }
-    `)).allProductsInfos.map(n=>({productDescription:n.productDescription,productId:n.id,productImage:n.productImage.url,productName:n.productName,productPrice:n.productPrice,productTags:n.productTags.map(r=>r.tagName)}));return console.log(t),t}const ux=pe.button`
+    `)).allProductsInfos.map(n=>({productDescription:n.productDescription,productId:n.id,productImage:n.productImage.url,productName:n.productName,productPrice:n.productPrice,productTags:n.productTags.map(r=>r.tagName)}))}const ux=pe.button`
     display: flex;
     justify-content: center;
     align-items: center;
