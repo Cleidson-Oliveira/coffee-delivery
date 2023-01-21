@@ -73,4 +73,4 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 ---
 
-Desenvolvido por Cleidson Oliveira
+Desenvolvido por [Cleidson Oliveira](https://github.com/Cleidson-Oliveira)
