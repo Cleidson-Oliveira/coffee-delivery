@@ -11,7 +11,10 @@
 
 ## Sobre
 
-O projeto **Coffee delivery** é o front-end de um e-commerce que foi criado dentro do curso **Bootcamp Ignite** da **Rocketseat** com o intuito de colocarmos em prática todo conteúdo estudado durante o curso.
+O projeto **Coffee delivery** é o front-end de um e-commerce fictício que foi criado dentro do **Bootcamp Ignite** da **Rocketseat** com o intuito de aplicar na prática todo conteúdo estudado durante o curso.
+Além do proposto para o desafio, foi adicionado layout responsivo para melhor visualização em aparelhos mobile. Utilizei também o Headless CMS DatoCMS para fornecer os dados dos produtos simulando uma API.
+
+O projeto está hospedado no Github pages e pode ser acessado através do link abaixo.
 
 <h3 align="center">
     <a href="https://cleidson-oliveira.github.io/coffee-delivery">Acessar a demonstração</a>
@@ -35,7 +38,12 @@ O projeto **Coffee delivery** é o front-end de um e-commerce que foi criado den
 O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 - [ReactJS](https://reactjs.org)
-
+- [Vite](https://vitejs.dev/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Dato CMS](https://www.datocms.com/)
+- [React Hook Form](https://react-hook-form.com/)
+- [Styled components](https://styled-components.com/)    
+    
 ---
 
 ## Como baixar o projeto
@@ -46,7 +54,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
     $ git clone https://github.com/Cleidson-Oliveira/coffee-delivery
 
     # Entrar no diretório
-    $ cd rocketmusic
+    $ cd coffee-delivery
 
     # Instalar as dependências
     $ yarn
